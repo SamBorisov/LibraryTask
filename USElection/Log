@@ -59,7 +59,7 @@ val	0 wei
 
 
 
-****Nevada:
+****Nevada:(not owner address)
 
 [vm]from: 0x787...cabaBto: USElection.(constructor)value: 0 weidata: 0x608...00033logs: 0hash: 0x440...5d524
 status	true Transaction mined and execution succeed
@@ -111,4 +111,37 @@ logs	[
 		}
 	}
 ]
+val	0 wei
+
+
+
+**** Submiting after election end:
+
+transact to USElection.submitStateResult pending ... 
+transact to USElection.submitStateResult errored: VM error: revert.
+
+revert
+	The transaction has been reverted to the initial state.
+Reason provided by the contract: "The election has ended already".
+Debug the transaction to get more information.
+[vm]from: 0x4B2...C02dbto: USElection.submitStateResult((string,uint256,uint256,uint8)) 0x481...7e1b1value: 0 weidata: 0xe49...00000logs: 0hash: 0x108...2d840
+status	false Transaction mined but execution failed
+transaction hash	0x1085b36a5ce5e528631716780931910abcc25d82c998e44c8b1e26ccbb12d840
+from	0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db
+to	USElection.submitStateResult((string,uint256,uint256,uint8)) 0x4815A8Ba613a3eB21A920739dE4cA7C439c7e1b1
+gas	80000000 gas
+transaction cost	25222 gas 
+execution cost	25222 gas 
+hash	0x1085b36a5ce5e528631716780931910abcc25d82c998e44c8b1e26ccbb12d840
+input	0xe49...00000
+decoded input	{
+	"tuple result": [
+		"Nevada",
+		"1100",
+		"800",
+		32
+	]
+}
+decoded output	{}
+logs	[]
 val	0 wei
