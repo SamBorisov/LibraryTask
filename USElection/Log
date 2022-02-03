@@ -1,0 +1,114 @@
+
+****Deploy:
+
+[vm]from: 0x4B2...C02dbto: USElection.(constructor)value: 0 weidata: 0x608...00033logs: 0hash: 0x589...3d574
+status	true Transaction mined and execution succeed
+transaction hash	0x5890789565182e9519d0ef0d5f53becfedbe0ad8a8f035b7451efae41c73d574
+from	0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db
+to	USElection.(constructor)
+gas	80000000 gas
+transaction cost	776253 gas 
+execution cost	776253 gas 
+hash	0x5890789565182e9519d0ef0d5f53becfedbe0ad8a8f035b7451efae41c73d574
+input	0x608...00033
+decoded input	{}
+decoded output	 - 
+logs	[]
+val	0 wei
+
+
+
+****Califorina:
+
+[vm]from: 0x4B2...C02dbto: USElection.submitStateResult((string,uint256,uint256,uint8)) 0x481...7e1b1value: 0 weidata: 0xe49...00000logs: 1hash: 0x4a5...689f9
+status	true Transaction mined and execution succeed
+transaction hash	0x4a53464e48b38f427e33ac0d16e7f93cd0b687d5a4f54b7b6681022e617689f9
+from	0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db
+to	USElection.submitStateResult((string,uint256,uint256,uint8)) 0x4815A8Ba613a3eB21A920739dE4cA7C439c7e1b1
+gas	80000000 gas
+transaction cost	51406 gas 
+execution cost	51406 gas 
+hash	0x4a53464e48b38f427e33ac0d16e7f93cd0b687d5a4f54b7b6681022e617689f9
+input	0xe49...00000
+decoded input	{
+	"tuple result": [
+		"California",
+		"1000",
+		"900",
+		32
+	]
+}
+decoded output	{}
+logs	[
+	{
+		"from": "0x4815A8Ba613a3eB21A920739dE4cA7C439c7e1b1",
+		"topic": "0xa2e71fe38f1afa3762cf9d2ea7bb6a4d272a90fd6f9392f3acedd3b542046b46",
+		"event": "LogStateResult",
+		"args": {
+			"0": 1,
+			"1": 32,
+			"2": "California",
+			"winner": 1,
+			"stateSeats": 32,
+			"state": "California"
+		}
+	}
+]
+val	0 wei
+
+
+
+
+****Nevada:
+
+[vm]from: 0x787...cabaBto: USElection.(constructor)value: 0 weidata: 0x608...00033logs: 0hash: 0x440...5d524
+status	true Transaction mined and execution succeed
+transaction hash	0x440cafc2c78ea91b68c571b4beacaba2744105d79f36adfd078e41eecf35d524
+from	0x78731D3Ca6b7E34aC0F824c42a7cC18A495cabaB
+to	USElection.(constructor)
+gas	80000000 gas
+transaction cost	776253 gas 
+execution cost	776253 gas 
+hash	0x440cafc2c78ea91b68c571b4beacaba2744105d79f36adfd078e41eecf35d524
+input	0x608...00033
+decoded input	{}
+decoded output	 - 
+logs	[]
+val	0 wei
+
+transact to USElection.submitStateResult pending ... 
+transact to USElection.submitStateResult errored: VM error: revert.
+
+revert
+	The transaction has been reverted to the initial state.
+Reason provided by the contract: "Not invoked by the owner".
+Debug the transaction to get more information.
+
+
+
+*****End Election
+
+[vm]from: 0x4B2...C02dbto: USElection.endElection() 0x481...7e1b1value: 0 weidata: 0x59f...78468logs: 1hash: 0xdbf...7fb40
+status	true Transaction mined and execution succeed
+transaction hash	0xdbf3d698436529257ed2dbf1256f6ec5a1df49931cea66991f498f309d97fb40
+from	0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db
+to	USElection.endElection() 0x4815A8Ba613a3eB21A920739dE4cA7C439c7e1b1
+gas	80000000 gas
+transaction cost	32519 gas 
+execution cost	32519 gas 
+hash	0xdbf3d698436529257ed2dbf1256f6ec5a1df49931cea66991f498f309d97fb40
+input	0x59f...78468
+decoded input	{}
+decoded output	{}
+logs	[
+	{
+		"from": "0x4815A8Ba613a3eB21A920739dE4cA7C439c7e1b1",
+		"topic": "0xaacb23683ec1a0e9b52f9a6264edf58ad322ac62079d65ea7363a2d400f439f4",
+		"event": "LogElectionEnded",
+		"args": {
+			"0": "1",
+			"winner": "1"
+		}
+	}
+]
+val	0 wei
