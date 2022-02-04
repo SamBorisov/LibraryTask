@@ -6,30 +6,32 @@ import "./Ownable.sol";
 contract Library is Ownable{
 
     struct book {
+        uint id;
         string title;
         string author;
         uint copies;
     }
 
-    mapping(address=>bool) public NotTaken;
     mapping(uint=>book) public books;
+    mapping(address=>mapping(uint=>bool)) public NotTaken;
 
     function addBook (uint _id, string memory _titile, string memory _author, uint _copies) public onlyOwner {
 
-        books[_id]=book(_titile,_author,_copies);
+        books[_id]=book(_id, _titile,_author,_copies);
     }
 
     function borrow (uint _id) public {
-        require(NotTaken[msg.sender]=true,"The user has already borrow a book");
+        require(NotTaken[msg.sender][_id] == false,"The user has already borrow a book");
         require(books[_id].copies > 0,"No available copies");
         books[_id].copies--;
-        NotTaken[msg.sender] == false;
+        NotTaken[msg.sender][_id] = true;
+
 
     }
     function retrun (uint _id) public {
-        require(NotTaken[msg.sender]=false,"The user has nothing to return");
+        require(NotTaken[msg.sender][_id] == true,"The user has nothing to return");
         books[_id].copies++;
-        NotTaken[msg.sender] = true; 
+        NotTaken[msg.sender][_id] = false; 
     }
 
 
