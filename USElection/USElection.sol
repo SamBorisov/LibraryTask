@@ -30,6 +30,7 @@ contract USElection is Ownable {
     function submitStateResult(StateResult calldata result) public onlyOwner onlyActiveElection {
 		    require(result.stateSeats > 0, "States must have at least 1 seat");
 		    require(result.votesBiden != result.votesTrump, "There cannot be a tie");
+          	    require(!resultsSubmitted[result.name], "This state result was already submitted!");
 		    uint8 winner;
 		    if(result.votesBiden > result.votesTrump) {
 		        winner = BIDEN;
@@ -38,6 +39,7 @@ contract USElection is Ownable {
 		    }
 
 		    seats[winner] += result.stateSeats;
+            resultsSubmitted[result.name] = true;
 
 		    emit LogStateResult(winner, result.stateSeats, result.name);
 		}
